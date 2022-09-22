@@ -4,6 +4,7 @@ import Image from "next/image";
 
 //components
 import User from "../components/User";
+import SearchHeaderOptions from "../components/SearchHeaderOptions";
 
 //icons
 import { FiSearch } from "react-icons/fi";
@@ -21,7 +22,7 @@ export default function SearchHeader() {
 
     if (!term.trim()) return;
 
-    router.push(`/search?term=${term.trim()}`);
+    router.push(`/search?term=${term.trim()}&searchType=`);
   };
 
   return (
@@ -52,6 +53,7 @@ export default function SearchHeader() {
         </form>
         <User className="ml-auto whitespace-nowrap" />
       </div>
+      <SearchHeaderOptions />
     </header>
   );
 }
