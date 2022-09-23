@@ -12,7 +12,7 @@ export default function SearchResults({ res }) {
         About {res.searchInformation.formattedTotalResults} results (
         {res.searchInformation.formattedSearchTime} seconds)
       </p>
-      {res.items.map((result, i) => (
+      {res.items?.map((result, i) => (
         <div key={i} className="max-w-xl mb-8">
           <div className="group">
             <a className="text-sm truncate" href={result.link}>
