@@ -4,8 +4,10 @@ import { useRouter } from "next/router";
 
 import SearchHeader from "../components/SearchHeader";
 import SearchResults from "../components/SearchResults";
+import ImageResults from "../components/ImageResults";
 
 export default function Search({ res }) {
+  console.log(res);
   const router = useRouter();
   return (
     <>
@@ -15,7 +17,11 @@ export default function Search({ res }) {
 
       <SearchHeader />
 
-      <SearchResults res={res} />
+      {router.query.searchType === "image" ? (
+        <ImageResults res={res} />
+      ) : (
+        <SearchResults res={res} />
+      )}
     </>
   );
 }
