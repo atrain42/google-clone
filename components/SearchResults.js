@@ -1,5 +1,7 @@
 import React from "react";
 
+import PaginationButtons from "./PaginationButtons";
+
 //convert hmtl string
 import Parser from "html-react-parser";
 
@@ -28,6 +30,7 @@ export default function SearchResults({ res }) {
           <p>{Parser(result.htmlSnippet)}</p>
         </div>
       ))}
+      <PaginationButtons />
     </div>
   );
 }
